@@ -47,12 +47,13 @@ The following model takes speech signals and the corresponding enhanced signals 
 [Pretrained model link](https://drive.google.com/drive/folders/12dTsiwFuPEu7n3tKJdSdko2-CfSvYlVz?usp=sharing)
 
 ```
-python test_gpu.py --datadir /path/to/wav/dir --ckptdir emotion_model_v1_audioset-noise_model_v1_audioset-f16 #if you use gpu
-python test_cpu.py --datadir /path/to/wav/dir --ckptdir emotion_model_v1_audioset-noise_model_v1_audioset-f16 #if you use cpu
+python test_gpu.py --datadir /path/to/wav/dir --ckptdir emotion_model_v1_audioset_r3-noise_model_v1_audioset_r3-f16 #if you use gpu
+python test_cpu.py --datadir /path/to/wav/dir --ckptdir emotion_model_v1_audioset_r3-noise_model_v1_audioset_r3-f16 #if you use cpu
 ```
 
 The results would be saved in {model_name}\_{data_dir}.txt
-Output format:
+
+Output format: 
 ```
 {wavname};{predicted_emotion};A:{arousal};V:{valence};D:{dominance},{[probability of emotion category]},{[[SNR-level score]]}
 ```
