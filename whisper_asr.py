@@ -22,7 +22,7 @@ def main():
       parser = argparse.ArgumentParser()
       parser.add_argument('--datadir', default='./data',  type=str, help='Path of your DATA/ directory')
       args = parser.parse_args()
-      input_dir= args.input_dir
+      input_dir= args.datadir
 
       file_list = get_filepaths(input_dir, format='.wav') #loop all the .wav file in dir
       file_list = set(file_list)
@@ -39,6 +39,7 @@ def main():
             file_list = list(file_list)
       except Exception as e:
             print(e)
+            print('Create new file')
             df = pd.DataFrame(columns=['wavname','start', 'end', 'transcript'])
             df.to_csv(outputname+'_whisper.csv', sep=',', index=False, header=True)
 
